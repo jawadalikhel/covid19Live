@@ -1,0 +1,27 @@
+.homePage-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    background-color: #022F40;
+    color: white;
+    height: 900px;
+}
+
+.quickFact-div {
+    grid-column: 1/5;
+    grid-row: 1/2;
+    width: 91%;
+    margin: 0 auto;
+    margin-top: 2%;
+    /* height: 66%; */
+    /* margin-left: 5%; */
+    /* background: red; */
+}
+
+.allCountries-div {
+    grid-column: 1/5;
+    grid-row: 2/3;
+    width: 90%;
+    margin: 0 auto;
+    background: black;
+    overflow: scroll;
+}

@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Display from './display/index';
 
 export default class QuickFacts extends Component {
     state = {
@@ -14,7 +15,7 @@ export default class QuickFacts extends Component {
             })
         })
         .catch((err) =>{
-            console.log(err, '<--- error with fetching api')
+            console.log(err.message, '<--- error with fetching api')
         })
     }
 
@@ -22,10 +23,9 @@ export default class QuickFacts extends Component {
         this.getAllData();
     }
     render() {
-        console.log(this.state)
         return (
             <div>
-                COVID19-Live
+                <Display data={this.state.allCovid}/>
             </div>
         )
     }

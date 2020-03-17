@@ -1,0 +1,24 @@
+.allcountries-container {
+    color: white;
+    /* background: #577399; */
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    column-gap: .1%;
+    row-gap: .2%;
+    width: 100%;
+    /* overflow-x: scroll; */
+
+}
+.allcountries-inner-div {
+    /* border: 3px solid #FF5964;
+    margin: 0 auto;
+    width: 85%; */
+    width: 90%;
+    height: 320px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    background-color: #577399;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+}
