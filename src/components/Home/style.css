@@ -3,13 +3,13 @@
     grid-template-columns: 25% 25% 25% 25%;
     background-color: #022F40;
     color: white;
-    height: 900px;
+    height: 150vh;
 }
 
 .quickFact-div {
     grid-column: 1/5;
     grid-row: 1/2;
-    width: 91%;
+    width: 90vw;
     margin: 0 auto;
     margin-top: 2%;
     /* height: 66%; */
@@ -20,8 +20,23 @@
 .allCountries-div {
     grid-column: 1/5;
     grid-row: 2/3;
-    width: 90%;
+    width: 90vw;
+    height: 100vh;
     margin: 0 auto;
     background: black;
     overflow: scroll;
+    /* padding-bottom: 20%; */
+}
+
+.google-map-div {
+    grid-column: 1/5;
+    grid-row: 4/5;
+    /* width: 90vw;
+    height: 100vh;
+    margin: 0 auto; */
+    /* background: red; */
+    /* overflow: scroll; */
+    margin-top: 5%;
+    /* background-color: green; */
+
 }

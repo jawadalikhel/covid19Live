@@ -1,46 +1,54 @@
 import React, { Component } from 'react';
+import './style.css';
+
 import Display from './display/index';
+import Search from './search-result-display/index';
 
 export default class QuickFacts extends Component {
     state = {
-        allCountries: []
+        allCountries: [],
+        search: "",
+        searchedCountry: ""
     }
 
+
+
     getAllData = async() =>{
+        // const fetchData = await fetch('https://pomber.github.io/covid19/timeseries.json');
+        // const fetchData = await fetch('https://corona.lmao.ninja/countries');
+
+        // console.log(data, '<---- dataaa')
         const fetchData = await fetch('https://coronavirus-19-api.herokuapp.com/countries');
         const dataJson = fetchData.json()
         dataJson
         .then((data) =>{
-
             var countriesWithMoreThen0Cases = data.filter(data => data.cases > 0)
             this.setState({
                 allCountries: countriesWithMoreThen0Cases
             })
-            // console.log(countriesWithMoreThen0Cases, '<---- countriesWithMoreThen0Cases')
-            // console.log(this.state.allCountries, '<---- this.state')
 
+        })
+        .then(() =>{
+            
         })
         .catch((err) =>{
             console.log(err, '<--- error with fetching api')
         })
     }
 
-    getAllData = async() =>{
-        const fetchData = await fetch('https://coronavirus-19-api.herokuapp.com/countries');
-        await fetchData.json()
-        .then((data) =>{
 
-            var countriesWithMoreThen0Cases = data.filter(data => data.cases > 0)
-
-            this.setState({
-                allCountries: countriesWithMoreThen0Cases
-            })
-            // console.log(data, '<---- data')
-            // console.log(this.state.allCountries, '<---- this.state')
-
+    searchCountry = async(e) => {
+        this.setState({
+            search: e.target.value.substr(0,20)
         })
-        .catch((err) =>{
-            console.log(err, '<--- error with fetching api')
+
+
+        const fetchData = await fetch(`https://corona.lmao.ninja/countries/${e.target.value}`);
+        fetchData.json()
+        .then((country) =>{
+            this.setState({
+                searchedCountry: country
+            })
         })
     }
 
@@ -48,10 +56,14 @@ export default class QuickFacts extends Component {
         this.getAllData();
     }
     render() {
+        // console.log(this.state.searchedCountry, '<---- searchedCountry')
         return (
-            <div>
+            <div className="allCountries-container">
+                <div  className="searchCountry-input-div">
+                    <input type="text" value={this.state.search} onChange={this.searchCountry} placeholder="earch Country"/>
+                </div>
                 {
-                    (this.state.allCountries !== "") ? <Display data={this.state.allCountries}/> : <h1>Nothing</h1>
+                    (this.state.searchedCountry === "") ? <div className="displayCountries-div"><Display data={this.state.allCountries}/> </div>: <div className="display-search-country-div" ><Search data={this.state.searchedCountry}/></div>
                 }
             </div>
         )

@@ -14,7 +14,7 @@ export default class Home extends Component {
                     <AllCountries />
                 </div>
 
-                <div>
+                <div className="google-map-div">
                     <Chart />
                 </div>
             </div>
