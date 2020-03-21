@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import './style.css';
 import QuickFacts from '../quickFacts/index';
 import AllCountries from '../countries/index';
+// import GoogleMap from '../googleMap/index';
 import Chart from '../chart/index';
+
 export default class Home extends Component {
     render() {
         return (
@@ -14,7 +16,7 @@ export default class Home extends Component {
                     <AllCountries />
                 </div>
 
-                <div className="google-map-div">
+                <div className="chart-div">
                     <Chart />
                 </div>
             </div>

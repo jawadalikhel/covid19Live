@@ -1,31 +1,76 @@
 import React, { Component } from 'react';
 import './style.css';
-import {GoogleMap, withScriptjs, withGoogleMap} from 'react-google-maps';
+import Chart from 'chart.js';
 
- function CovidGoogleMap(){
-    return (
-        <GoogleMap 
-            defaultZoom={2} 
-            defaultCenter={{lat: 25, lng: 5}}
-            // defaultCenter={{lat: 10, lng: 10}}
+export default class QuickFacts extends Component {
+    state = {
+        allCovid: []
+    }
 
-        />
-    )
-}
+    getAllData = async() =>{
+        const fetchData = await fetch('https://coronavirus-19-api.herokuapp.com/all');
+        fetchData.json()
+        .then((data) =>{
+            this.setState({
+                allCovid: data
+            })
+        })
+        .then(() =>{
 
-const WrappedMap = withScriptjs(withGoogleMap(CovidGoogleMap));
+            const data = this.state.allCovid;
+            var ctx = document.getElementById('myChart');
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: [
+                        'Total Cases',
+                        'Deaths',
+                        'Recovered'
+                    ],
+                    datasets: [
+                        {
+                            label: 'Points',
+                             backgroundColor: ['red', 'orange', 'blue'],
+                            // borderWidth: 10,
+                            // borderColor: "black",
+                            data: [data.cases, data.deaths, data.recovered],
+                        }
+                    ],
+                    // These labels appear in the legend and in the tooltips when hovering different arcs
+                },
+                Styling: {
+                    width: 2
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Global Data',
+                        fontSize: 30
+                    },
+                    layout: {
+                        // width: 10,
+                        // height: 10,
+                        // fontSize: 100,
+                        padding: {
+                            // right: 400, 
+                            // left: 400, 
+                        }
+                    }
+                }
+            });           
+        })
+        .catch((err) =>{
+            console.log(err.message, '<--- error with fetching api')
+        })
+    }
 
-export default class Chart extends Component {
+    componentDidMount(){
+        this.getAllData()
+    }
     render() {
         return (
-            <div className="googleMap-container"> 
-                {/* <h1>Google Map Here</h1> */}
-                <WrappedMap 
-                    googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAb5NvjzLjElyJY4f5gD-DGc3blNo-qcnY`}
-                    loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `100%` }} />}
-                    mapElement={<div style={{ height: `100%` }} />}
-                    />
+            <div className="myChart-container">
+                <canvas id="myChart" style={{width: "100px", height:"50px"}}></canvas>
             </div>
         )
     }

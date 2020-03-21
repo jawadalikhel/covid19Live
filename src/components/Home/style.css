@@ -1,9 +1,10 @@
 .homePage-container {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto;
     background-color: #022F40;
     color: white;
-    height: 150vh;
+    height: 300vh;
 }
 
 .quickFact-div {
@@ -17,26 +18,31 @@
     /* background: red; */
 }
 
-.allCountries-div {
+.chart-div {
     grid-column: 1/5;
     grid-row: 2/3;
+    width: 50vw;
+    height: 85vh;
+    margin: 0 auto;
+    background: lightgray;
+    overflow: scroll;
+    margin-top: -500px;
+    /* margin-bottom: 20%; */
+}
+
+.allCountries-div {
+    grid-column: 1/5;
+    grid-row: 3/4;
     width: 90vw;
     height: 100vh;
     margin: 0 auto;
     background: black;
     overflow: scroll;
+    /* margin-top: -1250px; */
     /* padding-bottom: 20%; */
 }
 
-.google-map-div {
+/* .chart-div {
     grid-column: 1/5;
-    grid-row: 4/5;
-    /* width: 90vw;
-    height: 100vh;
-    margin: 0 auto; */
-    /* background: red; */
-    /* overflow: scroll; */
-    margin-top: 5%;
-    /* background-color: green; */
-
-}
+    grid-row: 3/4;
+} */
