@@ -129,9 +129,13 @@ export default class QuickFacts extends Component {
                     </div>
                 }
 
-                <div className="google-map-div">
+                {/* <div className="google-map-div">
                     <GoogleMap data={this.state.allCountries} countriesNames={this.state.countriesNames} countriesGeoLocationData={this.state.countriesGeoLocation} />
-                </div>
+                </div> */}
+
+                {/* <div className="google-map-div">
+                    <GoogleMap />
+                </div> */}
             </div>
         )
     }

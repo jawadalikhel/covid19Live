@@ -1,0 +1,64 @@
+[debug] [2020-03-23T23:49:41.157Z] ----------------------------------------------------------------------
+[debug] [2020-03-23T23:49:41.158Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only hosting:covid19live
+[debug] [2020-03-23T23:49:41.158Z] CLI Version:   7.12.1
+[debug] [2020-03-23T23:49:41.158Z] Platform:      darwin
+[debug] [2020-03-23T23:49:41.158Z] Node Version:  v13.6.0
+[debug] [2020-03-23T23:49:41.159Z] Time:          Mon Mar 23 2020 18:49:41 GMT-0500 (Central Daylight Time)
+[debug] [2020-03-23T23:49:41.159Z] ----------------------------------------------------------------------
+[debug] [2020-03-23T23:49:41.159Z] 
+[debug] [2020-03-23T23:49:41.176Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-23T23:49:41.176Z] > authorizing via signed-in user
+[debug] [2020-03-23T23:49:41.176Z] [iam] checking project covid19livedata for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-03-23T23:49:41.177Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-03-23T23:49:41.178Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-03-23T23:49:48.335Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-23T23:49:48.356Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/covid19livedata:testIamPermissions  
+
+[debug] [2020-03-23T23:49:51.130Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-23T23:49:51.131Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/covid19livedata  
+ 
+[debug] [2020-03-23T23:49:53.435Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'covid19livedata'...
+[info] 
+[info] i  deploying hosting
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/covid19livedata/overview
+[debug] [2020-03-23T23:50:47.790Z] TypeError: Cannot read property 'deploys' of undefined
+    at /usr/local/lib/node_modules/firebase-tools/lib/deploy/index.js:84:36
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-03-23T23:51:30.533Z] ----------------------------------------------------------------------
+[debug] [2020-03-23T23:51:30.535Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only hosting:covid19live
+[debug] [2020-03-23T23:51:30.535Z] CLI Version:   7.12.1
+[debug] [2020-03-23T23:51:30.535Z] Platform:      darwin
+[debug] [2020-03-23T23:51:30.535Z] Node Version:  v13.6.0
+[debug] [2020-03-23T23:51:30.536Z] Time:          Mon Mar 23 2020 18:51:30 GMT-0500 (Central Daylight Time)
+[debug] [2020-03-23T23:51:30.536Z] ----------------------------------------------------------------------
+[debug] [2020-03-23T23:51:30.536Z] 
+[debug] [2020-03-23T23:51:30.541Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-23T23:51:30.542Z] > authorizing via signed-in user
+[debug] [2020-03-23T23:51:30.542Z] [iam] checking project covid19livedata for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-03-23T23:51:30.543Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/covid19livedata:testIamPermissions  
+
+[debug] [2020-03-23T23:51:31.108Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-23T23:51:31.109Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/covid19livedata  
+ 
+[debug] [2020-03-23T23:51:31.340Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'covid19livedata'...
+[info] 
+[info] i  deploying hosting
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/covid19livedata/overview
+[debug] [2020-03-23T23:51:31.486Z] TypeError: Cannot read property 'deploys' of undefined
+    at /usr/local/lib/node_modules/firebase-tools/lib/deploy/index.js:84:36
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.
