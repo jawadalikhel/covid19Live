@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     column-gap: .1%;
-    row-gap: .2%;
+    row-gap: .15%;
     width: 100%;
     /* overflow-x: scroll; */
 }

@@ -25,7 +25,7 @@ export default class QuickFacts extends Component {
         const dataJson = fetchData.json()
         dataJson
         .then((data) =>{
-            var countriesWithMoreThen0Cases = data.filter(data => data.cases > 10000)
+            var countriesWithMoreThen0Cases = data.filter(data => data.cases > 0)
             var tempData = [];
             countriesWithMoreThen0Cases.map((country) =>{
                 // console.log(country, '<--- country.name')

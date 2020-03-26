@@ -1,7 +1,6 @@
 .allCountries-container {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    row-gap:  .2%;
 }
 .searchCountry-input-div {
     position: absolute;
@@ -16,12 +15,13 @@
 }
 
 .searchCountry-input-div  input{
-    /* float: right; */
+    float: right;
     height: 50%;
-    width: 80%;
+    width: 50%;
     font-size: 20px;
     text-align: center;
-    margin-left: 10%;
+    /* margin-left: 5%; */
+    margin-top: 1%;
 }
 
 .displayCountries-div {
