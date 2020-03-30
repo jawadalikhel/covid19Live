@@ -3,12 +3,12 @@ import React,{useState} from 'react';
 import {GoogleMap,Marker, withScriptjs, withGoogleMap, InfoWindow} from 'react-google-maps';
 
 function Map(data){
-    console.log(data.isOpen, '<--- dataa')
+    console.log(data.google, '<--- google')
     return(
         <GoogleMap 
             defaultZoom={3}
             defaultCenter={{lat: 25, lng: 5}}
-
+            // mapTypeId = 'terrain'
         >
              {
                 data.data.map((country, index) => {
@@ -19,7 +19,8 @@ function Map(data){
                                 lat: country.lat, 
                                 lng: country.lng
                             }}
-                            style={{color: "blue"}}
+                            // icon="https://cdn.iconscout.com/icon/free/png-256/facebook-logo-2019-1597680-1350125.png"
+                            // style={{color: "blue"}}
                         >
                             {/* {
                                 !data.isOpen ? 
@@ -41,6 +42,7 @@ const Display = (props) => {
     return (
         <div style={{width: '100vw', height: '70vh'}}>
         <WrappedMap 
+            google={props.google}
             data={props.countryData}
             handleToggleOpen={props.handleToggleOpen}
             isOpen={props.isOpen}

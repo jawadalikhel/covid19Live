@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
 }
+
 .searchCountry-input-div {
     position: absolute;
     width: 90%;
@@ -11,7 +12,20 @@
     height: 50px;
     margin: 0 auto;
     margin-top: -5%;
+    margin-left: -20%;
     /* background-color: red; */
+}
+@media only screen and (max-width: 1300px) {
+    .searchCountry-input-div {
+        /* grid-column: 1/5;
+        grid-row: 3/4;
+        margin-bottom: 100px; */
+        width: 50%;
+        /* margin-left: -5%; */
+        margin-left: 15%;
+        margin-top: -4%;
+        /* background-color: red; */
+    }
 }
 
 .searchCountry-input-div  input{
@@ -21,7 +35,7 @@
     font-size: 20px;
     text-align: center;
     /* margin-left: 5%; */
-    margin-top: 1%;
+    /* margin-top: 1%; */
 }
 
 .displayCountries-div {

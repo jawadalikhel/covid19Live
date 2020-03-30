@@ -11,6 +11,18 @@
     background-color: royalblue;
 
 }
+@media only screen and (max-width: 1300px) {
+    .quickFacts-container {
+        /* background-color: red; */
+        width: 100vw;
+        height: 10vh;
+
+        margin-top: 1%;
+        margin-left: .1%;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+}
 
 .case-num{
     color: rgb(218, 0, 0);
